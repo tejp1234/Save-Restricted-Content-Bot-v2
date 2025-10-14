@@ -13,15 +13,12 @@ YTUB_COOKIES = """
 # write here yt cookies
 """
 
-API_ID  = os.getenv("API_ID", "22141398")
-API_HASH = os.getenv("API_HASH", "0c8f8bd171e05e42d6f6e5a6f4305389")
-BOT_TOKEN = os.getenv("BOT_TOKEN", "8269760529:AAGeGEyX024CysP2UT-NeJ0vBok3k387RI8")
-
-# ─── OWNER / CONTROL SETTINGS ───────────────────────────────────────────────────
-OWNER_ID     = list(map(int, os.getenv("OWNER_ID", "8104777494").split()))  # space-separated list
-MONGO_DB     = os.getenv("MONGO_DB", "mongodb+srv://Ansh089:Ansh089@cluster0.y8tpouc.mongodb.net/?retryWrites=true&w=majority")
-LOG_GROUP    = int(os.getenv("LOG_GROUP", "-1003003594014"))
-FORCE_SUB    = int(os.getenv("FORCE_SUB", "-1003003594014"))
+API_ID = int(getenv("API_ID", "22141398"))
+API_HASH = getenv("API_HASH", "0c8f8bd171e05e42d6f6e5a6f4305389")
+BOT_TOKEN = getenv("BOT_TOKEN", "8269760529:AAGeGEyX024CysP2UT-NeJ0vBok3k387RI8")
+OWNER_ID = list(map(int, getenv("OWNER_ID", "8104777494").split()))
+MONGO_DB = getenv("MONGO_DB", "mongodb+srv://Ansh089:Ansh089@cluster0.y8tpouc.mongodb.net/?retryWrites=true&w=majority")
+LOG_GROUP = getenv("LOG_GROUP", "-1003003594014")
 CHANNEL_ID = int(getenv("CHANNEL_ID", "-1003003594014"))
 FREEMIUM_LIMIT = int(getenv("FREEMIUM_LIMIT", "0"))
 PREMIUM_LIMIT = int(getenv("PREMIUM_LIMIT", "500"))
