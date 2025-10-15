@@ -1,16 +1,4 @@
-# ---------------------------------------------------
-# File Name: __main__.py
-# Description: A Pyrogram bot for downloading files from Telegram channels or groups 
-#              and uploading them back to Telegram.
-# Author: Gagan
-# GitHub: https://github.com/devgaganin/
-# Telegram: https://t.me/team_spy_pro
-# YouTube: https://youtube.com/@dev_gagan
-# Created: 2025-01-11
-# Last Modified: 2025-01-11
-# Version: 2.0.5
-# License: MIT License
-# ---------------------------------------------------
+
 
 import asyncio
 import importlib
@@ -50,6 +38,17 @@ async def devggn_boot():
 📜 License: MIT License
 ---------------------------------------------------
 """)
+    
+    # Verify LOG_GROUP access
+    from config import LOG_GROUP
+    from devgagan import app
+    try:
+        chat = await app.get_chat(LOG_GROUP)
+        print(f"✅ LOG_GROUP verified: {chat.title} ({LOG_GROUP})")
+    except Exception as e:
+        print(f"⚠️ WARNING: Cannot access LOG_GROUP ({LOG_GROUP})")
+        print(f"   Error: {e}")
+        print(f"   Please add bot to the channel/group with posting rights!")
 
     asyncio.create_task(schedule_expiry_check())
     print("Auto removal started ...")
